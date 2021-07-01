@@ -15,7 +15,7 @@ function firstQuestion(){
     $('.content').hide();
     Swal.fire({
         title: 'Tặng em nè 😍',
-        text: 'Anh có điều này muốn hỏi em nhớ phải trả lời thật lòng nhá.',
+        text: 'Anh có điều này muốn hỏi em, nhớ phải trả lời thật lòng nhá.',
         imageUrl: 'img/mylove1.jpg',
         imageWidth: 300,
         imageHeight: 400,
