@@ -21,7 +21,7 @@ function firstQuestion(){
         imageHeight: 400,
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'My love',
-        customClass:{image:'img-raduis'},
+        customClass:{image:'img-radius'},
       }).then(function(){
         $('.content').show(200);
       })
