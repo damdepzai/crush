@@ -92,7 +92,7 @@ function textGenerate() {
 
 // show popup
 $('#yes').click(function() {
-    var audio = new Audio('sound/anhthedo.mp3');
+    var audio = new Audio('sound/anh-the-do.mp3');
     audio.play();
     Swal.fire({
         title: 'Nghe hết bài hát này rồi trả lời cho anh nhé ❤️❤️❤️',
