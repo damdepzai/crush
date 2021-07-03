@@ -38,6 +38,10 @@
   border-radius: 15px !important;
 }
 
+.img-radius{
+  border-radius: 10px;
+}
+
 header h2 {
   font-family: 'Pacifico';
   font-size: 80px;

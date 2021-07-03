@@ -21,6 +21,7 @@ function firstQuestion(){
         imageHeight: 400,
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'My love',
+        customClass:{image:'img-raduis'},
       }).then(function(){
         $('.content').show(200);
       })
