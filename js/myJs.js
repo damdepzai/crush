@@ -16,7 +16,7 @@ function firstQuestion(){
     Swal.fire({
         title: 'Tặng em nè 😍',
         text: 'Anh có điều này muốn hỏi em, nhớ phải trả lời thật lòng nhá.',
-        imageUrl: 'img/mylove1.jpg',
+        imageUrl: 'img/mylove.jpg',
         imageWidth: 300,
         imageHeight: 400,
         background: '#fff url("img/iput-bg.jpg")',
@@ -126,7 +126,7 @@ $('#yes').click(function() {
                 text: "Tối nay anh qua đón em đi chơi nhé. Còn mấy giờ thì nhắn tin cho anh để biết thêm chi tiết nhé 😉",
                 confirmButtonColor: '#83d0c9',
                 onClose: () => {
-                    window.location = 'https://www.facebook.com/messages/t/100005346788673';
+                    window.location = 'https://www.facebook.com';
                   }
             })
         }
