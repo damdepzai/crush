@@ -29,7 +29,7 @@ function firstQuestion(){
 
  // switch button position
  function switchButton() {
-    var audio = new Audio('sound/duck.mp3');
+    var audio = new Audio('sound/swish.mp3');
     audio.play();
     var leftNo = $('#no').css("left");
     var topNO = $('#no').css("top");
@@ -72,7 +72,7 @@ $('#no').click(() => {
 // generate text in input
 function textGenerate() {
     var n = "";
-    var text = " Vâng, em đồng ý làm người yêu của anh ❤️";
+    var text = "";
     var a = Array.from(text);
     var textVal = $('#txtReason').val() ? $('#txtReason').val() : "";
     var count = textVal.length;
@@ -95,7 +95,7 @@ $('#yes').click(function() {
     var audio = new Audio('sound/anh-the-do.mp3');
     audio.play();
     Swal.fire({
-        title: 'Nghe hết bài hát này rồi trả lời cho anh nhé ❤️❤️❤️',
+        title: 'Nghe hết bài này đi nhé !!!',
         html: true,
         width: 900,
         padding: '3em',
@@ -107,13 +107,14 @@ $('#yes').click(function() {
               left top
             `,
         showCancelButton: true,
-        cancelButtonText: "Thôi em ngại lắm 🤦‍♀️",
+        cancelButtonText: "Không có gì để nói 🤦‍♀️",
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonColor: '#fe8a71',
         cancelButtonColor: '#f6cd61',
-        confirmButtonText: 'Em đồng ý ❣️'
+        confirmButtonText: 'Gửi nội dung❣️',
     }).then((result) => {
+        console.log(result);
         if (result.value) {
             var audio = new Audio('sound/tick.mp3');
             audio.play();
@@ -122,7 +123,7 @@ $('#yes').click(function() {
                 width: 900,
                 confirmButtonText: 'Oki luôn😊',
                 background: '#fff url("img/iput-bg.jpg")',
-                title: 'Anh biết em sẽ đồng ý mà, yêu em nhiều ❤️ ',
+                title: 'Anh biết em sẽ đồng ý mà',
                 text: "Tối nay anh qua đón em đi chơi nhé. Còn mấy giờ thì nhắn tin cho anh để biết thêm chi tiết nhé 😉",
                 confirmButtonColor: '#83d0c9',
                 onClose: () => {
