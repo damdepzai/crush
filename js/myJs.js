@@ -1,34 +1,16 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // process bar
-    setTimeout(function() {
-        firstQuestion();
-        $('.spinner').fadeOut();
-        $('#preloader').delay(350).fadeOut('slow');
-        $('body').delay(350).css({
+    setTimeout(function () {
+        $('.loading-containe').fadeOut();
+        $('#preloader').delay(5000).fadeOut('slow');
+        $('body').delay(5000).css({
             'overflow': 'visible'
         });
-    }, 600);
+    }, 1500);
 })
 
-function firstQuestion(){
-    
-    $('.content').hide();
-    Swal.fire({
-        title: 'Tặng em nè 😍',
-        text: 'Anh có điều này muốn hỏi em, nhớ phải trả lời thật lòng nhá.',
-        imageUrl: 'img/mylove.jpg',
-        imageWidth: 300,
-        imageHeight: 400,
-        background: '#fff url("img/iput-bg.jpg")',
-        imageAlt: 'My love',
-        customClass:{image:'img-radius'},
-      }).then(function(){
-        $('.content').show(200);
-      })
-}
-
- // switch button position
- function switchButton() {
+// switch button position
+function switchButton() {
     var audio = new Audio('sound/swish.mp3');
     audio.play();
     var leftNo = $('#no').css("left");
@@ -40,12 +22,12 @@ function firstQuestion(){
     $('#yes').css("left", leftNo);
     $('#yes').css("top", topNO);
 }
-// move random button póition
+// move random button position
 function moveButton() {
-    if (screen.width<=600) {
+    if (screen.width <= 600) {
         var x = Math.random() * 300;
         var y = Math.random() * 500;
-    } else{
+    } else {
         var x = Math.random() * 500;
         var y = Math.random() * 500;
     }
@@ -57,7 +39,7 @@ function moveButton() {
 
 
 var n = 0;
-$('#no').mousemove(function() {
+$('#no').mousemove(function () {
     if (n < 1)
         switchButton();
     if (n > 1)
@@ -90,46 +72,26 @@ function textGenerate() {
     setTimeout("textGenerate()", 1);
 }
 
-// show popup
-$('#yes').click(function() {
-    var audio = new Audio('sound/anh-the-do.mp3');
+$('#yes').click(function () {
+    var audio = new Audio('sound/tick.mp3');
     audio.play();
-    Swal.fire({
-        title: 'Nghe hết bài này đi nhé !!!',
-        html: true,
-        width: 900,
-        padding: '3em',
-        html: "<input type='text' class='form-control' id='txtReason' onmousemove=textGenerate()  placeholder='Em muốn nói với anh gì nào. '>",
-        background: '#fff url("img/iput-bg.jpg")',
-        backdrop: `
-              rgba(0,0,123,0.4)
-              url("img/tym1.gif")
-              left top
-            `,
-        showCancelButton: true,
-        cancelButtonText: "Không có gì để nói 🤦‍♀️",
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonColor: '#fe8a71',
-        cancelButtonColor: '#f6cd61',
-        confirmButtonText: 'Gửi nội dung❣️',
-    }).then((result) => {
-        console.log(result);
-        if (result.value) {
-            var audio = new Audio('sound/tick.mp3');
-            audio.play();
 
-            Swal.fire({
-                width: 900,
-                confirmButtonText: 'Oki luôn😊',
-                background: '#fff url("img/iput-bg.jpg")',
-                title: 'Anh biết em sẽ đồng ý mà',
-                text: "Tối nay anh qua đón em đi chơi nhé. Còn mấy giờ thì nhắn tin cho anh để biết thêm chi tiết nhé 😉",
-                confirmButtonColor: '#83d0c9',
-                onClose: () => {
-                    window.location = 'https://www.facebook.com';
-                  }
-            })
+    Swal.fire({
+        width: 900,
+        confirmButtonText: 'Oki luôn😊',
+        background: '#fff url("img/iput-bg.jpg")',
+        title: 'Anh biết em sẽ đồng ý mà',
+        text: "Tối nay anh qua đón em đi chơi nhé. Còn mấy giờ thì nhắn tin cho anh để biết thêm chi tiết nhé 😉",
+        confirmButtonColor: '#83d0c9',
+        backdrop: `
+                      rgba(0,0,123,0.4)
+                      url("img/tym1.gif")
+                      left top
+                    `,
+        onClose: () => {
+            // window.location = 'https://www.facebook.com';
+                // var audio = new Audio('sound/anh-the-do.mp3');
+                // audio.play();
         }
     })
 })
